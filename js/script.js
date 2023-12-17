@@ -33,12 +33,14 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
+            //indice per selezionare i singoli contatti
+            singleContact: 0,
 
             //array dei contatti
             contacts: [
                 {
                     name: 'Michele',
-                    avatar: './img/avatar_1.png',
+                    avatar: 'img/avatar_1.png',
                     visible: true,
                     messages: [
                         {
@@ -200,8 +202,13 @@ createApp({
             ]
         }
     },
+
+    mounted() {
+        console.log(this.contacts);
+    },
+
     methods: {
 
-    },
+    }
 
 }).mount('#app')
