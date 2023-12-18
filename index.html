@@ -84,19 +84,10 @@
                     <!-- contenuto centrale chat -->
                     <div class="middle-container">
  
-                        <div class="send">
-                            <span class="text-chat">Hai portato a spasso il cane?</span>
-                            <span class="timing-chat">15:30</span>
-                         </div>
-                         <div class="send">
-                            <span class="text-chat">Ricordati di stendere i panni</span>
-                            <span class="timing-chat">15:50</span>
+                        <div v-for="(message, index) in contacts[singleContact].messages" :key="index" :class="{ 'send': message.status === 'sent', 'received': message.status === 'received' }">
+                            <span class="text-chat">{{ message.message }}</span>
+                            <span class="timing-chat">{{ message.date }}</span>
                         </div>
-                        <div class="received">
-                            <span class="text-chat">Fatto!</span>
-                            <span class="timing-chat">16:15</span>
-                        </div> 
-
                     </div>
                     <!-- zona di scrittura contenuto centrale -->
                     <div class="bottom-chat-bar">
