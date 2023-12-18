@@ -49,12 +49,12 @@
                         <input type="text" placeholder="Cerca o inizia una nuova chat">
                     </div>
                     <div id="contacts-container">
-                        <div class="chat-avatar">
-                            <img src="img/avatar_1.jpg" alt="avatar della chat">
+                        <div v-for="(contact, i) in contacts" :key="i" class="chat-avatar">
+                            <img :src="contact.avatar" alt="Avatar della chat">
                             <div class="user-info-contacts">
                                 <div>
-                                    <span>Michele</span>
-                                    <span class="last-message">Ultimo messaggio inviato</span>
+                                    <span>{{ contact.name }}</span>
+                                    <span class="last-message">{{ getLastMessage(contact) }}</span>
                                 </div>
                                 <span class="last-seen-online">12.00</span>
                             </div>
