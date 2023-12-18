@@ -106,7 +106,7 @@ body {
     color: #6e6e6e;
 }
 
-.last-seen-online, .last-message, #notification a {
+.last-seen-online, .last-message, #notification a, .timing-chat {
     color: #858ca0;
     font-size: 13px;
 }
@@ -191,6 +191,40 @@ body {
     width: 100%;
     display: flex;
     justify-content: space-between;
+}
+
+/*zona centrale di chatting*/
+.middle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.middle-container .send, .middle-container .received {
+    width: 35%;
+    padding: 10px 0;
+    margin: 10px 40px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.send {
+    background-color: #d5f9ba;
+    align-self: flex-end;
+}
+
+.received {
+    background-color: #fff;
+}
+
+.text-chat {
+    margin-left: 10px;
+}
+
+.timing-chat {
+    margin: 10px 10px 0 0;
+    text-align: right;
 }
 
 /*barra chat*/
