@@ -36,6 +36,10 @@ createApp({
             //indice per selezionare i singoli contatti
             singleContact: 0,
 
+            //quello che verrà inserito scrivendo nell'input di chat
+            chatMessage: "",
+            error: false,
+
             //array dei contatti
             contacts: [
                 {
@@ -126,11 +130,23 @@ createApp({
     },
 
     methods: {
-        // Metodo per ottenere l'ultimo messaggio di un contatto
+        //funzione per ottenere l'ultimo messaggio di un contatto
         getLastMessage(contact) {
             const lastMessage = contact.messages[contact.messages.length - 1];
             return lastMessage.message;
         },
+
+        //funzione che mi permette di scrivere nella chat
+        addChat() {
+            //funzionante se quello che si scrive ha una lunghezza di più di 0 lettere
+            if (this.chatMessage.length > 0) {
+                this.contacts[this.singleContact].messages.push({message: this.chatMessage,status: 'sent'});
+                this.chatMessage = "";
+                this.error = false;
+            } else {
+                this.error = true;
+            }
+        }
     },
 
     mounted() {

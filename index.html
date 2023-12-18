@@ -48,6 +48,7 @@
                         <button><i class="fa-solid fa-magnifying-glass"></i></button>
                         <input type="text" placeholder="Cerca o inizia una nuova chat">
                     </div>
+                    <!-- lista dei contatti -->
                     <div id="contacts-container">
                         <div v-for="(contact, i) in contacts" :key="i" class="chat-avatar">
                             <img :src="contact.avatar" alt="Avatar della chat">
@@ -83,7 +84,7 @@
                     </div>
                     <!-- contenuto centrale chat -->
                     <div class="middle-container">
- 
+                        <!-- messaggi -->
                         <div v-for="(message, index) in contacts[singleContact].messages" :key="index" :class="{ 'send': message.status === 'sent', 'received': message.status === 'received' }">
                             <span class="text-chat">{{ message.message }}</span>
                             <span class="timing-chat">{{ message.date }}</span>
@@ -92,7 +93,7 @@
                     <!-- zona di scrittura contenuto centrale -->
                     <div class="bottom-chat-bar">
                         <i class="fa-regular fa-face-smile"></i>
-                        <input type="text" placeholder="Scrivi un messaggio">
+                        <input type="text" placeholder="Scrivi un messaggio" v-model="chatMessage" @keyup.enter="addChat">
                         <i class="fa-solid fa-microphone"></i>
                     </div>
                 </div>
