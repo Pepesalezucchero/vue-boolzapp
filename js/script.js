@@ -135,16 +135,20 @@ createApp({
             const lastMessage = contact.messages[contact.messages.length - 1];
             return lastMessage.message;
         },
-
         //funzione che mi permette di scrivere nella chat
         addChat() {
             //funzionante se quello che si scrive ha una lunghezza di più di 0 lettere
             if (this.chatMessage.length > 0) {
-                this.contacts[this.singleContact].messages.push({message: this.chatMessage,status: 'sent'});
+                this.contacts[this.singleContact].messages.push({message: this.chatMessage, status: 'sent'});
                 this.chatMessage = "";
                 this.error = false;
+                // Simulazione della "ok" dopo un secondo
+                setTimeout(() => {
+                    this.contacts[this.singleContact].messages.push({message: "Ok", status: 'received'});
+                }, 1000);
+            //appunto, se non è lungo almeno 1 lettera il messaggio, non viene scritto nulla
             } else {
-                this.error = true;
+            this.error = true;
             }
         }
     },
