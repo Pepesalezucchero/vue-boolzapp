@@ -50,7 +50,7 @@
                     </div>
                     <!-- lista dei contatti -->
                     <div id="contacts-container">
-                        <div v-for="(contact, i) in contacts" :key="i" class="chat-avatar" v-show="contact.name.toLowerCase().includes(searchContact)">
+                        <div v-for="(contact, i) in contacts" :key="i" class="chat-avatar" v-show="contact.name.toLowerCase().includes(searchContact.toLowerCase())"> <!-- chiedi a Simone! Stackoverflow -->
                             <img :src="contact.avatar" alt="Avatar della chat">
                             <div class="user-info-contacts">
                                 <div>
