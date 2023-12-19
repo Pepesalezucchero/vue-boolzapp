@@ -47,6 +47,13 @@ body {
     display: flex;
 }
 
+/*responsive md */
+@media all and (max-width: 992px) {
+    #wrapper-up {
+        width: 850px;
+    }
+ }
+
 #side-nav-bar {
     width: 35%;
     background-color: #fff;
