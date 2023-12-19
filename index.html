@@ -46,11 +46,11 @@
                     <!-- barra ricerca contatti -->
                     <div id="search-container">
                         <button><i class="fa-solid fa-magnifying-glass"></i></button>
-                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchContact">
                     </div>
                     <!-- lista dei contatti -->
                     <div id="contacts-container">
-                        <div v-for="(contact, i) in contacts" :key="i" class="chat-avatar">
+                        <div v-for="(contact, i) in contacts" :key="i" class="chat-avatar" v-show="contact.name.toLowerCase().includes(searchContact)">
                             <img :src="contact.avatar" alt="Avatar della chat">
                             <div class="user-info-contacts">
                                 <div>

@@ -40,6 +40,9 @@ createApp({
             chatMessage: "",
             error: false,
 
+            //variabile per filtrare i contatti tramite la searchbar
+            searchContact:'',
+
             //array dei contatti
             contacts: [
                 {
